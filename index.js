@@ -55,7 +55,7 @@ async function startBot() {
             qrcode.generate(qr, { small: true }); 
         }
 
-        if (connection === 'open') console.log('✅ JAVAGOAT AI IS ONLINE!');
+        if (connection === 'open') console.log('✅ KADILISHOPBOT AI IS ONLINE!');
         if (connection === 'close') {
             const reason = lastDisconnect?.error?.output?.statusCode;
             if (reason !== DisconnectReason.loggedOut) startBot();
@@ -111,7 +111,7 @@ async function startBot() {
                 console.log("Firebase Error: ", error);
             }
 
-            await sock.sendMessage(sender, { text: `✅ *Order Placed Successfully!* \n\nThank you! Your order for *${item.name}* is being prepared. \n\n*Total:* ₹${javaGoatOrder.total} (Inc. Delivery)\n*Status:* Preparing\n\nWe will deliver it to your address soon.` });
+            await sock.sendMessage(sender, { text: `✅ *Order Placed Successfully!* \n\nThank you! Your order for *${item.name}* is being prepared. \n\n*Total:* Tsh${javaGoatOrder.total} (Inc. Delivery)\n*Status:* Preparing\n\nWe will deliver it to your address soon.` });
             delete orderStates[sender]; 
             return;
         }
@@ -158,7 +158,7 @@ async function startBot() {
                 return;
             }
 
-            let menuMessage = "🍔 *JAVAGOAT LIVE MENU* 🍕\n\n";
+            let menuMessage = "🍔 *KADILISHOPBOT LIVE MENU* 🍕\n\n";
             currentMenu.forEach(item => {
                 menuMessage += `🔸 *${item.name}* - ₹${item.price}\n`;
             });
@@ -169,10 +169,10 @@ async function startBot() {
 
         // --- GREETINGS ---
         else if (text.includes("hi") || text.includes("hello") || text.includes("hey")) {
-            await sock.sendMessage(sender, { text: "👋 *Welcome to JavaGoat!* \n\nI am your AI Assistant. Type *menu* to see our delicious food, or type *order [dish]* to buy instantly!" });
+            await sock.sendMessage(sender, { text: "👋 *Welcome to Kadilibot!* \n\nI am your AI Assistant. Type *menu* to see our delicious food, or type *order [dish]* to buy instantly!" });
         }
         else if (text.includes("contact") || text.includes("call")) {
-            await sock.sendMessage(sender, { text: "📞 *Contact JavaGoat:* \n\n- *Email:* support@javagoat.com" });
+            await sock.sendMessage(sender, { text: "📞 *Contact Kadilinot:* \n\n- *Email:* support@kadilibot.com" });
         }
         else {
             await sock.sendMessage(sender, { text: "🤔 I didn't quite catch that.\n\nType *menu* to see our food list, or *order [food]* to place an order!" });
